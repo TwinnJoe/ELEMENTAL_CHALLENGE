@@ -1,0 +1,580 @@
+/* Global Style */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  height: 175px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.logo {
+  margin-left: 50px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.menu-icon {
+  font-size: 40px;
+  margin-right: 70px;
+  cursor: pointer;
+}
+
+/* Hero Section Styles */
+.hero {
+  height: 600px;
+  width: 90%;
+  overflow: hidden;
+  padding-top: 150px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  object-fit: cover;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  height: 100%;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 54%;
+  width: 50%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003b94;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 25px;
+  z-index: 2;
+  text-align: center;
+}
+
+.shade {
+  position: absolute;
+  top: 52%;
+  height: 120px;
+  padding: 10px 20px;
+  width: 40px;
+  background-color: #000000;
+  z-index: 100;
+  margin-left: 95%;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  right: 2%;
+  font-size: 70px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  padding: 10px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 30px;
+  right: 2%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.dot img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.dot.active img {
+  opacity: 1;
+  filter: sepia(1) hue-rotate(195deg) saturate(500%);
+}
+
+/* Container Styles */
+.container {
+  max-width: 1300px;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Intro Section Styles */
+.intro {
+  padding: 40px 0px;
+  display: flex;
+  justify-content: left;
+}
+
+/* Text */
+.intro p {
+  font-size: 24px;
+  width: 60%;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Image */
+.intro-image {
+  padding: 40px 0px;
+  flex: 1;
+  text-align: right;
+}
+
+/* Features Section Styles */
+.features {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.feature-box {
+  background-color: #061c2c;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon {
+  color: #1c9cd8;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.feature-text {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+}
+
+/* Tags Section Styles */
+.tags {
+  display: flex;
+  padding: 40px 0;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tags a {
+  background-color: #244ac2;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+  width: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.tag-arrow {
+  color: #1c9cd8;
+  font-size: 30px;
+}
+
+.tags a.tag-link .tag-arrow {
+  margin-left: 15px;
+}
+
+.tags a:hover {
+  background-color: #061c2c;
+}
+
+/*Mobile Devices*/
+@media only screen and (max-width: 480px) {
+  header {
+    height: auto;
+    padding: 10px 0px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 25px;
+    margin-bottom: 0;
+  }
+
+  .logo img {
+    width: 70px;
+  }
+
+  .menu-icon {
+    margin-right: 18px;
+    font-size: 38px;
+  }
+
+  .hero {
+    height: 150px;
+    padding-top: 100px;
+  }
+
+  .overlay {
+    width: 70%;
+    font-size: 14px;
+    height: auto;
+    padding: 8px;
+    top: 24%;
+  }
+
+  .shade {
+    display: none;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    z-index: 2;
+  }
+
+  .arrow img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .dots {
+    bottom: 15px;
+    right: 10%;
+    transform: translateX(50%);
+    gap: 4px;
+  }
+
+  .dot img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro p {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .intro-image img {
+    width: 90%;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-box {
+    width: 80%;
+  }
+
+  .tags {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tags a {
+    width: 80%;
+    padding: 12px;
+  }
+}
+
+/* Tablet Devices*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  header {
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .logo img {
+    width: 40%;
+  }
+
+  .menu-icon {
+    font-size: 32px;
+    margin-right: 55px;
+  }
+
+  .hero {
+    height: 300px;
+    padding-top: 130px;
+  }
+
+  .overlay {
+    width: 60%;
+    height: auto;
+    font-size: 20px;
+    top: 38%;
+    padding: 10px;
+  }
+
+  .shade {
+    height: 23px;
+    top: 38%;
+    width: 10px;
+    margin-left: 0;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    z-index: 2;
+  }
+
+  .arrow img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .dots {
+    bottom: 20px;
+    right: 5%;
+    transform: translateX(50%);
+    gap: 4px;
+  }
+
+  .dot img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro p {
+    width: 85%;
+    font-size: 18px;
+  }
+
+  .intro-image {
+    width: 93%;
+    margin: 0 auto;
+  }
+
+  .features {
+    flex-direction: column;
+    width: 93%;
+    margin: auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .tags a {
+    background: #244ac2;
+    color: white;
+    width: 85%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* Desktops and Laptops*/
+
+@media only screen and (min-width: 1025px) {
+  /* Header Adjustments */
+  header {
+    height: 130px;
+  }
+
+  .logo {
+    margin-left: 80px;
+  }
+
+  .logo img {
+    width: 120px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover img {
+    transform: scale(1.05);
+  }
+
+  .menu-icon {
+    font-size: 45px;
+    margin-right: 80px;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Hero Section Enhancements */
+  .hero {
+    height: 600px;
+    max-width: 1600px;
+    padding-top: 100px;
+  }
+
+  .overlay {
+    width: 45%;
+    height: 100px;
+    font-size: 32px;
+    top: 47%;
+    padding: 15px 30px;
+  }
+
+  .shade {
+    height: 100px;
+    top: 47%;
+    width: 30px;
+  }
+
+  /* Slider Controls */
+  .arrow {
+    font-size: 80px;
+    right: 5%;
+    top: 38%;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow:hover {
+    transform: scale(1.2);
+  }
+
+  .dots {
+    bottom: 10%;
+    right: 5%;
+    gap: 10px;
+  }
+
+  .dot img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease;
+  }
+
+  .dot:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Content Sections */
+  .container {
+    max-width: 1400px;
+  }
+
+  .intro p {
+    font-size: 28px;
+    width: 65%;
+    line-height: 1.8;
+  }
+
+  /* Features Grid */
+  .features {
+    gap: 20px;
+  }
+
+  .feature-box {
+    padding: 30px;
+  }
+
+  .feature-text {
+    font-size: 22px;
+  }
+
+  .arrow-icon {
+    font-size: 80px;
+  }
+
+  /* Tags Section */
+  .tags {
+    gap: 20px;
+    padding: 60px 0;
+  }
+
+  .tags a {
+    height: 45px;
+    font-size: 14px;
+    white-space: nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .tags a .arrow-icon {
+    margin-left: 20px;
+  }
+
+  .tag-arrow {
+    font-size: 35px;
+  }
+}
